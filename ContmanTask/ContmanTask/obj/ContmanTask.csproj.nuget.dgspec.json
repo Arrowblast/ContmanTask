@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj": {}
+    "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj": {
+    "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj",
+        "projectUniqueName": "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj",
         "projectName": "ContmanTask",
-        "projectPath": "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj",
+        "projectPath": "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj",
         "packagesPath": "C:\\Users\\rwalicki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTask\\obj\\",
+        "outputPath": "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTask\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -41,6 +41,44 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Castle.Core": {
+              "target": "Package",
+              "version": "[4.4.1, )"
+            },
+            "Castle.Windsor": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "MySql.Web": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Z.EntityFramework.Extensions": {
+              "target": "Package",
+              "version": "[5.1.19, )"
+            },
+            "Z.EntityFramework.Extensions.EFCore": {
+              "target": "Package",
+              "version": "[5.1.19, )"
+            },
+            "Z.EntityFramework.Plus.EFCore": {
+              "target": "Package",
+              "version": "[5.1.19, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
