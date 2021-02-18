@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2ncnZs0YSdWmD6poCieye/dcFMcYF488nS7AWt+jJMzPutOFZp50AWtrNivOB1DMYtAxZryCRSLfEmJQuj1t3A==",
+  "dgSpecHash": "mr4ezaEtVYxpkBbTDUxNIr+AjY2AxQUlw+6fO/vfB3oYhSUiEfw/N05NWuBKFNEznLuN/2t1c52SMYQ/fyVxng==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj",
+  "projectFilePath": "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rwalicki\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\rwalicki\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
@@ -37,6 +37,7 @@
     "C:\\Users\\rwalicki\\.nuget\\packages\\mysql.web\\8.0.20\\mysql.web.8.0.20.nupkg.sha512",
     "C:\\Users\\rwalicki\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\rwalicki\\.nuget\\packages\\nlog\\4.7.7\\nlog.4.7.7.nupkg.sha512",
     "C:\\Users\\rwalicki\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\rwalicki\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.6.0\\runtime.native.system.data.sqlclient.sni.4.6.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\runtime.native.system.security.cryptography\\4.0.0\\runtime.native.system.security.cryptography.4.0.0.nupkg.sha512",

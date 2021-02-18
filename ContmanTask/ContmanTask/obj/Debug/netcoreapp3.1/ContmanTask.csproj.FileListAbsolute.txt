@@ -81,5 +81,3 @@ C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\net
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Castle.Windsor.dll
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
-C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.csproj.CoreCompileInputs.cache
-C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.MvcApplicationPartsAssemblyInfo.cache

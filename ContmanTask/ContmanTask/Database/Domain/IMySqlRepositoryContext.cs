@@ -7,7 +7,7 @@ using ContmanTask.Database.Repository.Base;
 
 namespace ContmanTask.Database.Domain
 {
-    interface IMySqlRepositoryContext
+    public interface IMySqlRepositoryContext
     {
         IUpdatableRepository<AccountModel> AccountRepository { get;}
         IUpdatableRepository<EmailAddressModel> EmailAddressRepository { get; }
