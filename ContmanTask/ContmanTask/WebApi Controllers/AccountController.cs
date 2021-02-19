@@ -1,17 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
+using ContmanTask.BussinessLogic.DataContact.Account;
+using ContmanTask.BussinessLogic.InterfaceContact;
+using ContmanTask.WebApi_Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ContmanTask.WebApi_Controllers
 {
-    [Route("api/[controller]")]
+    #region IoC
+
+    #endregion
+    [Route("api/Account")]
     [ApiController]
-    public class AccountController : ControllerBase
+    [Consumes("application/json")]
+    [Produces("application/json")]
+    public class AccountController : BaseController
     {
+        private IAccountBL AccountBL
+        {
+            get
+            {
+                return WindsorContainer.Resolve<IAccountBL>();
+            }
+        }
         // GET: api/<AccountController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -20,16 +35,20 @@ namespace ContmanTask.WebApi_Controllers
         }
 
         // GET api/<AccountController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("GetData")]
+        public IActionResult GetData(AccountDataRequest req)
         {
-            return "value";
+            var result = AccountBL.Login(req);
+            return Ok(result);
         }
 
         // POST api/<AccountController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Route("~/PostData")]
+        public IActionResult PostData([FromBody] AccountDataRequest req)
         {
+            var result = AccountBL.CreateAccount(req);
+            return Ok(result);
         }
 
         // PUT api/<AccountController>/5

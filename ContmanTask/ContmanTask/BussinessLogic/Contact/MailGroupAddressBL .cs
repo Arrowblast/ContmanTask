@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ContmanTask.BussinessLogic.Contact
 {
-    public class MailGroupAddressBL : BaseBLRepo, IMailGroupBL
+    public class MailGroupAddressBL : BaseBLRepo, IMailGroupAddressBL
     {
         #region repositories
         private IUpdatableRepository<EmailGroupModel> EmailGroupRepository

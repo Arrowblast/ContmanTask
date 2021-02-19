@@ -9,7 +9,7 @@ namespace ContmanTask.Database.Utils
 {
     public class EFCommandInterceptor : IDbCommandInterceptor
     {
-        public EFCommandInterceptor(string databaseName, string defaultDbSchema = "contman_task_database")
+        public EFCommandInterceptor(string databaseName= "MySqlModel", string defaultDbSchema = "contman_task_database")
         {
             newDatabaseSchema = databaseName;
             oldDatabaseSchema = defaultDbSchema;

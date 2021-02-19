@@ -2,7 +2,6 @@ C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\net
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\ContmanTask.exe
-C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.csprojAssemblyReference.cache
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.AssemblyInfoInputs.cache
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.AssemblyInfo.cs
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.RazorTargetAssemblyInfo.cache
@@ -81,3 +80,14 @@ C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\net
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Castle.Windsor.dll
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\rwalicki\Source\Repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.Owin.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.Owin.Hosting.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Owin.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.csproj.CoreCompileInputs.cache
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\System.Web.Http.Owin.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.Owin.Host.HttpListener.dll
