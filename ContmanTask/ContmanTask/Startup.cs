@@ -19,6 +19,7 @@ using Castle.Windsor;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor.Extensions.DependencyInjection;
 using ContmanTask.Database.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ContmanTask
 {
@@ -36,10 +37,20 @@ namespace ContmanTask
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = $"https://{Configuration["Auth0:Domain"]}/";
+                options.Audience = Configuration["Auth0:Audience"];
+            });
             services.AddControllers().
                 AddControllersAsServices();
             connectionString = Configuration.GetConnectionString("MySqlModel");
 
+            services.AddSwaggerGen();
 
         }
         public void ConfigureContainer(IWindsorContainer container)
@@ -56,11 +67,19 @@ namespace ContmanTask
             {
                 app.UseDeveloperExceptionPage();
             }
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
 
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             app.UseHttpsRedirection();
             //app.UseMiddleware<LoggingOwinMiddleware>();
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

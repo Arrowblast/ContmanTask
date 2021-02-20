@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ContmanTask.BussinessLogic.DataContact.Mail
 {
-    public class MailGroupDataRequest
+    public class MailDataRequest
     {
         public string Mail { get; set;}
         public string AccountName { get; set; }

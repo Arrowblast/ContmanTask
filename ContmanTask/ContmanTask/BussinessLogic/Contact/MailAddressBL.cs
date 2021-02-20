@@ -22,15 +22,16 @@ namespace ContmanTask.BussinessLogic.Contact
             }
         }
         #endregion
-        public bool AddMail(MailGroupDataRequest req)
+        public bool AddMail(MailDataRequest req)
         {
             try
             {
+
                 EmailAddressRepository.Insert(new EmailAddressModel()
                 {
                     Email = req.Mail,
                     AccountName = req.AccountName,
-                    GroupId = req.GroupId 
+                    GroupId = (req.GroupId !=0 ? req.GroupId : null as int?)
                 });
                 return true;
             }
@@ -40,7 +41,7 @@ namespace ContmanTask.BussinessLogic.Contact
             }
         }
 
-        public bool DeleteMail(MailGroupDataRequest req)
+        public bool DeleteMail(MailDataRequest req)
         {
             try
             {
@@ -54,19 +55,26 @@ namespace ContmanTask.BussinessLogic.Contact
             }
         }
 
-        public IQueryable<string> GetMail(MailGroupDataRequest req)
+        public IQueryable<string> GetMail(MailDataRequest req)
         {
             var mail = this.EmailAddressRepository.GetAll();
-
-            var query = from model in mail
+            IQueryable<string> query =null;
+            if (req.Mail!=null)
+            {
+                query = from model in mail
                         where model.Email == req.Mail
-                        && model.GroupId == req.GroupId
                         select model.Email;
+            }
+            else
+            {
+                query = from model in mail
+                        select model.Email;
+            }
 
             return query;
         }
 
-        public bool UpdateMail(MailGroupUpdateDataRequest req)
+        public bool UpdateMail(MailUpdateDataRequest req)
         {
             try
             {

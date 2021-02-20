@@ -8,10 +8,10 @@ namespace ContmanTask.BussinessLogic.InterfaceContact
 {
     public interface IMailAddressBL
     {
-        public IQueryable<string> GetMail(MailGroupDataRequest req);
-        public bool AddMail(MailGroupDataRequest req);
-        public bool UpdateMail(MailGroupUpdateDataRequest req);
-        public bool DeleteMail(MailGroupDataRequest req);
+        public IQueryable<string> GetMail(MailDataRequest req);
+        public bool AddMail(MailDataRequest req);
+        public bool UpdateMail(MailUpdateDataRequest req);
+        public bool DeleteMail(MailDataRequest req);
 
     }
 }

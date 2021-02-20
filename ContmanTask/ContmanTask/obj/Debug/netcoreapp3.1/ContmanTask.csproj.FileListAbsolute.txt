@@ -80,8 +80,6 @@ C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\net
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.csprojAssemblyReference.cache
-C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.csproj.CoreCompileInputs.cache
-C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
@@ -96,3 +94,18 @@ C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\net
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Z.EntityFramework.Extensions.EFCore.dll
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Z.EntityFramework.Plus.EFCore.dll
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Z.Expressions.Eval.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.csproj.CoreCompileInputs.cache
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.MvcApplicationPartsAssemblyInfo.cache

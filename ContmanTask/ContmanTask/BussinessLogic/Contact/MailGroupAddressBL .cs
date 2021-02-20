@@ -29,7 +29,6 @@ namespace ContmanTask.BussinessLogic.Contact
             {
                 EmailGroupRepository.Insert(new EmailGroupModel()
                 {
-                   GroupId = req.GroupId,
                    GroupName = req.GroupName
                 });
                 return true;
@@ -56,12 +55,19 @@ namespace ContmanTask.BussinessLogic.Contact
         public IQueryable<string> GetMailGroup(MailGroupDataRequest req)
         {
             var emailGroup = this.EmailGroupRepository.GetAll();
-
-            var query = from model in emailGroup
+            IQueryable<string> query = null;
+            if(req.GroupName!=null)
+            {
+                query = from model in emailGroup
                         where model.GroupId == req.GroupId
                         && model.GroupName == req.GroupName
                         select model.GroupName;
-
+            }
+            else
+            {
+                query = from model in emailGroup
+                        select model.GroupName;
+            }
             return query;
         }
         public bool UpdateMailGroup(DataContact.MailGroup.MailGroupUpdateDataRequest req)
