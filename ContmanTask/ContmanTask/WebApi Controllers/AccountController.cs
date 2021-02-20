@@ -43,8 +43,7 @@ namespace ContmanTask.WebApi_Controllers
         }
 
         // POST api/<AccountController>
-        [HttpPost]
-        [Route("~/PostData")]
+        [HttpPost("PostData")]
         public IActionResult PostData([FromBody] AccountDataRequest req)
         {
             var result = AccountBL.CreateAccount(req);

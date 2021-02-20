@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Edmx Version="3.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <Runtime>
+    <ConceptualModels>
+      <Schema Namespace="ContmanTask.Database.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AccountModel" customannotation:ClrType="ContmanTask.Database.Models.AccountModel, ContmanTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="AccountName" />
+          </Key>
+          <Property Name="AccountName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EmailAddress" Relationship="Self.AccountModel_EmailAddress" FromRole="AccountModel_EmailAddress_Source" ToRole="AccountModel_EmailAddress_Target" />
+        </EntityType>
+        <EntityType Name="EmailAddressModel" customannotation:ClrType="ContmanTask.Database.Models.EmailAddressModel, ContmanTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GroupId" Type="Int32" />
+          <Property Name="AccountName" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Self.AccountModel_EmailAddress" FromRole="AccountModel_EmailAddress_Target" ToRole="AccountModel_EmailAddress_Source" />
+          <NavigationProperty Name="Group" Relationship="Self.EmailGroupModel_Emails" FromRole="EmailGroupModel_Emails_Target" ToRole="EmailGroupModel_Emails_Source" />
+        </EntityType>
+        <EntityType Name="EmailGroupModel" customannotation:ClrType="ContmanTask.Database.Models.EmailGroupModel, ContmanTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Emails" Relationship="Self.EmailGroupModel_Emails" FromRole="EmailGroupModel_Emails_Source" ToRole="EmailGroupModel_Emails_Target" />
+        </EntityType>
+        <Association Name="EmailGroupModel_Emails">
+          <End Role="EmailGroupModel_Emails_Source" Type="Self.EmailGroupModel" Multiplicity="0..1" />
+          <End Role="EmailGroupModel_Emails_Target" Type="Self.EmailAddressModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmailGroupModel_Emails_Source">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="EmailGroupModel_Emails_Target">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AccountModel_EmailAddress">
+          <End Role="AccountModel_EmailAddress_Source" Type="Self.AccountModel" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AccountModel_EmailAddress_Target" Type="Self.EmailAddressModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountModel_EmailAddress_Source">
+              <PropertyRef Name="AccountName" />
+            </Principal>
+            <Dependent Role="AccountModel_EmailAddress_Target">
+              <PropertyRef Name="AccountName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MySqlModel" customannotation:UseClrTypes="true">
+          <EntitySet Name="Account" EntityType="Self.AccountModel" />
+          <EntitySet Name="EmailAddress" EntityType="Self.EmailAddressModel" />
+          <EntitySet Name="EmailGroup" EntityType="Self.EmailGroupModel" />
+          <AssociationSet Name="EmailGroupModel_Emails" Association="Self.EmailGroupModel_Emails">
+            <End Role="EmailGroupModel_Emails_Source" EntitySet="EmailGroup" />
+            <End Role="EmailGroupModel_Emails_Target" EntitySet="EmailAddress" />
+          </AssociationSet>
+          <AssociationSet Name="AccountModel_EmailAddress" Association="Self.AccountModel_EmailAddress">
+            <End Role="AccountModel_EmailAddress_Source" EntitySet="Account" />
+            <End Role="AccountModel_EmailAddress_Target" EntitySet="EmailAddress" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </ConceptualModels>
+    <Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CodeFirstDatabase" CdmEntityContainer="MySqlModel">
+          <EntitySetMapping Name="Account">
+            <EntityTypeMapping TypeName="ContmanTask.Database.Models.AccountModel">
+              <MappingFragment StoreEntitySet="AccountModel">
+                <ScalarProperty Name="AccountName" ColumnName="account_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailAddress">
+            <EntityTypeMapping TypeName="ContmanTask.Database.Models.EmailAddressModel">
+              <MappingFragment StoreEntitySet="EmailAddressModel">
+                <ScalarProperty Name="Email" ColumnName="email" />
+                <ScalarProperty Name="GroupId" ColumnName="group_id" />
+                <ScalarProperty Name="AccountName" ColumnName="account_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailGroup">
+            <EntityTypeMapping TypeName="ContmanTask.Database.Models.EmailGroupModel">
+              <MappingFragment StoreEntitySet="EmailGroupModel">
+                <ScalarProperty Name="GroupId" ColumnName="group_id" />
+                <ScalarProperty Name="GroupName" ColumnName="group_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </Mappings>
+    <StorageModels>
+      <Schema Namespace="CodeFirstDatabaseSchema" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AccountModel">
+          <Key>
+            <PropertyRef Name="account_name" />
+          </Key>
+          <Property Name="account_name" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailAddressModel">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="group_id" Type="int" customannotation:Index="{ Name: IX_group_id, Order: 0 }" Nullable="true" />
+          <Property Name="account_name" Type="nvarchar" customannotation:Index="{ Name: IX_account_name, Order: 0 }" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailGroupModel">
+          <Key>
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Name="group_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="group_name" Type="nvarchar(max)" Nullable="true" />
+        </EntityType>
+        <Association Name="EmailGroupModel_Emails">
+          <End Role="EmailGroupModel" Type="Self.EmailGroupModel" Multiplicity="0..1" />
+          <End Role="EmailAddressModel" Type="Self.EmailAddressModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmailGroupModel">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="EmailAddressModel">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AccountModel_EmailAddress">
+          <End Role="AccountModel" Type="Self.AccountModel" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmailAddressModel" Type="Self.EmailAddressModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountModel">
+              <PropertyRef Name="account_name" />
+            </Principal>
+            <Dependent Role="EmailAddressModel">
+              <PropertyRef Name="account_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CodeFirstDatabase">
+          <EntitySet Name="AccountModel" EntityType="Self.AccountModel" Schema="dbo" Table="account" />
+          <EntitySet Name="EmailAddressModel" EntityType="Self.EmailAddressModel" Schema="dbo" Table="email_address" />
+          <EntitySet Name="EmailGroupModel" EntityType="Self.EmailGroupModel" Schema="dbo" Table="email_group" />
+          <AssociationSet Name="EmailGroupModel_Emails" Association="Self.EmailGroupModel_Emails">
+            <End Role="EmailGroupModel" EntitySet="EmailGroupModel" />
+            <End Role="EmailAddressModel" EntitySet="EmailAddressModel" />
+          </AssociationSet>
+          <AssociationSet Name="AccountModel_EmailAddress" Association="Self.AccountModel_EmailAddress">
+            <End Role="AccountModel" EntitySet="AccountModel" />
+            <End Role="EmailAddressModel" EntitySet="EmailAddressModel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </StorageModels>
+  </Runtime>
+  <Designer>
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="ProcessDependentTemplatesOnSave" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <Diagrams />
+  </Designer>
+</Edmx>

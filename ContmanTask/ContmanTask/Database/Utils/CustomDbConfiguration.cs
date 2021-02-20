@@ -10,8 +10,8 @@ namespace ContmanTask.Database.Utils
 {
     public class CustomDbConfiguration : DbConfiguration
     {
-        static string DatabaseName => ConfigurationManager.AppSettings["DatabaseName"];
-        static string DefaultDatabaseName => ConfigurationManager.AppSettings["DefaultDatabaseName"];
+        static string DatabaseName => "contman_task_database";
+        static string DefaultDatabaseName => "contman_task_database";
         public CustomDbConfiguration()
         {
             string path = Path.GetDirectoryName(this.GetType().Assembly.Location);

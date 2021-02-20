@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
+using MySql.Data.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
 using Z.EntityFramework.Plus;
@@ -41,11 +42,10 @@ namespace ContmanTask.Database.Repository.Base
             }
             finally
             {
-                //foreach (var entity in entities)
-                //{
-                //    dbContext.Entry(entity).State = EntityState.Detached;
-                //}
-                this._entities.DetachRange(entities);
+                foreach (var entity in entities)
+                {
+                    dbContext.Entry(entity).State = EntityState.Detached;
+                }
             }
         }
 
@@ -77,11 +77,10 @@ namespace ContmanTask.Database.Repository.Base
             }
             finally
             {
-                //foreach (var entity in entities)
-                //{
-                //    dbContext.Entry(entity).State = EntityState.Detached;
-                //}
-                this._entities.DetachRange(entities);
+                foreach (var entity in entities)
+                {
+                    dbContext.Entry(entity).State = EntityState.Detached;
+                }
             }
         }
 
@@ -112,11 +111,11 @@ namespace ContmanTask.Database.Repository.Base
             }
             finally
             {
-                //foreach (var entity in entities)
-                //{
-                //    dbContext.Entry(entity).State = EntityState.Detached;
-                //}
-                this._entities.DetachRange(entities);
+                foreach (var entity in entities)
+                {
+                    dbContext.Entry(entity).State = EntityState.Detached;
+                }
+                
             }
         }
 

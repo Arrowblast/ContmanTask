@@ -29,6 +29,7 @@ namespace ContmanTask.BussinessLogic.Contact
                 EmailAddressRepository.Insert(new EmailAddressModel()
                 {
                     Email = req.Mail,
+                    AccountName = req.AccountName,
                     GroupId = req.GroupId 
                 });
                 return true;
@@ -71,6 +72,7 @@ namespace ContmanTask.BussinessLogic.Contact
             {
                 var mail = EmailAddressRepository.GetAll().Where(x => x.Email == req.Mail).FirstOrDefault();
                 mail.Email = req.NewMail;
+                mail.AccountName = req.NewAccountName;
                 mail.GroupId = req.NewGroupId;
                 EmailAddressRepository.Update(mail);
                 return true;

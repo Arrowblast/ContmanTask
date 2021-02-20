@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using MySql.Data.EntityFrameworkCore;
 
 namespace ContmanTask.Database.Repository.Base
 {

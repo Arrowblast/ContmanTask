@@ -18,12 +18,14 @@ using System.Web.Http.ExceptionHandling;
 using Castle.Windsor;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor.Extensions.DependencyInjection;
+using ContmanTask.Database.Models;
 
 namespace ContmanTask
 {
     public class Startup
     {
-       public static IServiceProvider provider;
+        public static IServiceProvider provider;
+        public static string connectionString;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -36,7 +38,8 @@ namespace ContmanTask
         {
             services.AddControllers().
                 AddControllersAsServices();
-            
+            connectionString = Configuration.GetConnectionString("MySqlModel");
+
 
         }
         public void ConfigureContainer(IWindsorContainer container)

@@ -29,8 +29,7 @@ namespace ContmanTask.BussinessLogic.Contact
             {   
                 AccountRepository.Insert(new AccountModel()
                 {
-                    AccountName = req.AccountName,
-                    Email = req.Email
+                    AccountName = req.AccountName
                 });
                 return true;
             }
@@ -46,10 +45,9 @@ namespace ContmanTask.BussinessLogic.Contact
 
             var query = from model in accountData
                         where model.AccountName == req.AccountName
-                        && model.Email == req.Email
-                        select new { model.AccountName , model.Email};
+                        select new { model.AccountName };
 
-            if (query.Count()>0)
+            if (query.ToList().Count>0)
                 return true;
             else
                 return false;
