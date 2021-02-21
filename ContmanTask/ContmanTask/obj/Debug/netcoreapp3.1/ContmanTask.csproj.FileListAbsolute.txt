@@ -109,3 +109,5 @@ C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\net
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.csproj.CoreCompileInputs.cache
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\bin\Debug\netcoreapp3.1\ContmanTask.xml
+C:\Users\rwalicki\source\repos\ContmanTask\ContmanTask\ContmanTask\obj\Debug\netcoreapp3.1\ContmanTask.xml

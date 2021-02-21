@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Infrastructure.DependencyResolution;
 using System.Diagnostics;
 using System.IO;
-
 namespace ContmanTask.Database.Utils
 {
     public class CustomDbConfiguration : DbConfiguration
@@ -20,13 +18,11 @@ namespace ContmanTask.Database.Utils
             AddDependencyResolver(dependencyResolver);
             this.AddInterceptor(new EFCommandInterceptor(DatabaseName, DefaultDatabaseName));
         }
-
         private class CustomDbModelStore : DefaultDbModelStore
         {
             public CustomDbModelStore(string location)
                 : base(location)
             { }
-
             public override DbCompiledModel TryLoad(Type contextType)
             {
                 string path = GetFilePath(contextType);
@@ -44,21 +40,17 @@ namespace ContmanTask.Database.Utils
                 {
                     Trace.TraceInformation("No cached db model found. Creating cached db model edmx.");
                 }
-
                 return base.TryLoad(contextType);
             }
         }
     }
-
     public sealed class CustomDbConfigurationProvider
     {
         private static readonly Lazy<CustomDbConfiguration>
             lazy =
             new Lazy<CustomDbConfiguration>
                 (() => new CustomDbConfiguration());
-
         public static CustomDbConfiguration CustomDbConfigurationInstance { get { return lazy.Value; } }
-
         private CustomDbConfigurationProvider()
         {
         }

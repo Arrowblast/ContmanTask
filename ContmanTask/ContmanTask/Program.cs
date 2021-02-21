@@ -1,22 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Owin.Hosting;
 using NLog;
-
+using System;
 namespace ContmanTask
 {
+#pragma warning disable CS1591
     public class Program
     {
         public static readonly IWindsorContainer container = new WindsorContainer();
-
         public IWindsorContainer WindsorContainer
         {
             get
@@ -26,7 +18,6 @@ namespace ContmanTask
         }
         public static void Main(string[] args)
         {
-
             string domainAddress = "http://+:1410";
             LogManager.GetCurrentClassLogger().Info("Service hosted " + domainAddress);
             CreateHostBuilder(args).Build().Run();
@@ -38,11 +29,7 @@ namespace ContmanTask
            .ConfigureWebHostDefaults(webBuilder =>
            {
                webBuilder.UseStartup<Startup>();
-              
            });
     }
-        
-
-
+#pragma warning restore CS1591
 }
-

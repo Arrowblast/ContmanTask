@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ContmanTask</name>
+    </assembly>
+    <members>
+        <member name="M:ContmanTask.Database.Repository.Base.BaseUpdatableRepository`2.Update(System.Linq.IQueryable{`0},System.Linq.Expressions.Expression{System.Func{`0,`0}})">
+            <summary>
+            NOT TESTED!!!
+            </summary>
+            <param name="entities"></param>
+            <param name="updateFactory"></param>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.AccountController.Login(ContmanTask.BussinessLogic.DataContact.Account.AccountDataRequest)">
+            <summary>
+            Allows user to log in and generates authorization token
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.AccountController.CreateAccount(ContmanTask.BussinessLogic.DataContact.Account.AccountDataRequest)">
+            <summary>
+            Allows user to create an account
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.GetMail(ContmanTask.BussinessLogic.DataContact.Mail.MailDataRequest)">
+            <summary>
+            Allows user check if an mail exists
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.GetAllMail">
+            <summary>
+            Gives all mails registered with api
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.AddMail(ContmanTask.BussinessLogic.DataContact.Mail.MailDataRequest)">
+            <summary>
+            Adds mail address to the database
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.PutMail(ContmanTask.BussinessLogic.DataContact.Mail.MailUpdateDataRequest)">
+            <summary>
+            Allows to update email address, connected account name and group id
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.DeleteMail(ContmanTask.BussinessLogic.DataContact.Mail.MailDataRequest)">
+            <summary>
+            Deletes mail from database
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.GetMailGroup(ContmanTask.BussinessLogic.DataContact.MailGroup.MailGroupDataRequest)">
+            <summary>
+            Allows user check if an mail group exists
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.GetAllMailGroup">
+            <summary>
+            Gives all mail groups registered with api
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.GetMailFromGroup(ContmanTask.BussinessLogic.DataContact.MailGroup.MailGroupDataRequest)">
+            <summary>
+            Gives all mails assigned to certain group
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.AddMailGroup(ContmanTask.BussinessLogic.DataContact.MailGroup.MailGroupDataRequest)">
+            <summary>
+            Adds mail group to the database
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.UpdateMailGroup(ContmanTask.BussinessLogic.DataContact.MailGroup.MailGroupUpdateDataRequest)">
+            <summary>
+            Allows to update email group's data
+            </summary>
+        </member>
+        <member name="M:ContmanTask.WebApi_Controllers.MailerController.DeleteMailGroup(ContmanTask.BussinessLogic.DataContact.MailGroup.MailGroupDataRequest)">
+            <summary>
+            Deletes mail group from the database
+            </summary>
+        </member>
+    </members>
+</doc>

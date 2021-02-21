@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Castle.Windsor;
+﻿using ContmanTask.BussinessLogic.DataContact.Mail;
+using ContmanTask.BussinessLogic.DataContact.MailGroup;
 using ContmanTask.BussinessLogic.InterfaceContact;
 using ContmanTask.WebApi_Controllers.Base;
-using ContmanTask.BussinessLogic.DataContact.Mail;
-using ContmanTask.BussinessLogic.DataContact.MailGroup;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace ContmanTask.WebApi_Controllers
 {
     [Route("api/Mailer")]
     [ApiController]
+    [Consumes("application/json")]
+    [Produces("application/json")]
     public class MailerController : BaseController
     {
         #region IoC
@@ -34,9 +30,9 @@ namespace ContmanTask.WebApi_Controllers
             }
         }
         #endregion
-        
-
-        // GET api/<MailerController>/5
+        /// <summary>
+        /// Allows user check if an mail exists
+        /// </summary>
         [HttpGet("GetMail")]
         [Authorize]
         public IActionResult GetMail([FromBody] MailDataRequest req)
@@ -44,6 +40,9 @@ namespace ContmanTask.WebApi_Controllers
             var result = MailAddressBL.GetMail(req);
             return Ok(result.ToList());
         }
+        /// <summary>
+        /// Gives all mails registered with api
+        /// </summary>
         [HttpGet("GetAllMail")]
         [Authorize]
         public IActionResult GetAllMail()
@@ -52,7 +51,9 @@ namespace ContmanTask.WebApi_Controllers
             var result = MailAddressBL.GetMail(req);
             return Ok(result.ToList());
         }
-
+        /// <summary>
+        /// Adds mail address to the database
+        /// </summary>
         // POST api/<MailerController>
         [HttpPost("AddMail")]
         [Authorize]
@@ -61,7 +62,9 @@ namespace ContmanTask.WebApi_Controllers
             var result = MailAddressBL.AddMail(req);
             return Ok(result);
         }
-
+        /// <summary>
+        /// Allows to update email address, connected account name and group id
+        /// </summary>
         // PUT api/<MailerController>/5
         [HttpPut("UpdateMail")]
         [Authorize]
@@ -70,7 +73,9 @@ namespace ContmanTask.WebApi_Controllers
             var result = MailAddressBL.UpdateMail(req);
             return Ok(result);
         }
-
+        /// <summary>
+        /// Deletes mail from database
+        /// </summary>
         // DELETE api/<MailerController>/5
         [HttpDelete("DeleteMail")]
         [Authorize]
@@ -79,6 +84,9 @@ namespace ContmanTask.WebApi_Controllers
             var result = MailAddressBL.DeleteMail(req);
             return Ok(result);
         }
+        /// <summary>
+        /// Allows user check if an mail group exists
+        /// </summary>
         [HttpGet("GetMailGroup")]
         [Authorize]
         public IActionResult GetMailGroup([FromBody] MailGroupDataRequest req)
@@ -86,6 +94,9 @@ namespace ContmanTask.WebApi_Controllers
             var result = MailGroupBL.GetMailGroup(req);
             return Ok(result.ToList());
         }
+        /// <summary>
+        /// Gives all mail groups registered with api
+        /// </summary>
         [HttpGet("GetAllMailGroup")]
         [Authorize]
         public IActionResult GetAllMailGroup()
@@ -94,8 +105,19 @@ namespace ContmanTask.WebApi_Controllers
             var result = MailGroupBL.GetMailGroup(req);
             return Ok(result.ToList());
         }
-
-        // POST api/<MailerController>
+        /// <summary>
+        /// Gives all mails assigned to certain group
+        /// </summary>
+        [HttpGet("GetMailFromGroup")]
+        [Authorize]
+        public IActionResult GetMailFromGroup([FromBody] MailGroupDataRequest req)
+        {
+            var result = MailGroupBL.GetMailsFromGroup(req);
+            return Ok(result.ToList());
+        }
+        /// <summary>
+        /// Adds mail group to the database
+        /// </summary>
         [HttpPost("AddMailGroup")]
         [Authorize]
         public IActionResult AddMailGroup([FromBody] MailGroupDataRequest req)
@@ -103,8 +125,9 @@ namespace ContmanTask.WebApi_Controllers
             var result = MailGroupBL.AddMailGroup(req);
             return Ok(result);
         }
-
-        // PUT api/<MailerController>/5
+        /// <summary>
+        /// Allows to update email group's data
+        /// </summary>
         [HttpPut("UpdateMailGroup")]
         [Authorize]
         public IActionResult UpdateMailGroup([FromBody] MailGroupUpdateDataRequest req)
@@ -112,8 +135,9 @@ namespace ContmanTask.WebApi_Controllers
             var result = MailGroupBL.UpdateMailGroup(req);
             return Ok(result);
         }
-
-        // DELETE api/<MailerController>/5
+        /// <summary>
+        /// Deletes mail group from the database
+        /// </summary>
         [HttpDelete("DeleteMailGroup")]
         [Authorize]
         public IActionResult DeleteMailGroup([FromBody] MailGroupDataRequest req)

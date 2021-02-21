@@ -1,14 +1,10 @@
-﻿using ContmanTask.BussinessLogic.DataContact.Account;
-using ContmanTask.BussinessLogic.DataContact.MailGroup;
+﻿using ContmanTask.BussinessLogic.DataContact.MailGroup;
 using ContmanTask.BussinessLogic.InterfaceContact;
 using ContmanTask.Database.Models;
 using ContmanTask.Database.Repository.Base;
 using Gomez.Core.BusinessLogic;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-
 namespace ContmanTask.BussinessLogic.Contact
 {
     public class MailGroupAddressBL : BaseBLRepo, IMailGroupAddressBL
@@ -21,19 +17,25 @@ namespace ContmanTask.BussinessLogic.Contact
                 return this.MySqlRepositoryContext.EmailGroupRepository;
             }
         }
+        private IUpdatableRepository<EmailAddressModel> EmailAddressRepository
+        {
+            get
+            {
+                return this.MySqlRepositoryContext.EmailAddressRepository;
+            }
+        }
         #endregion
-
         public bool AddMailGroup(DataContact.MailGroup.MailGroupDataRequest req)
         {
             try
             {
                 EmailGroupRepository.Insert(new EmailGroupModel()
                 {
-                   GroupName = req.GroupName
+                    GroupName = req.GroupName
                 });
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -46,28 +48,41 @@ namespace ContmanTask.BussinessLogic.Contact
                 EmailGroupRepository.Remove(group);
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
         }
-
-        public IQueryable<string> GetMailGroup(MailGroupDataRequest req)
+        public IQueryable<object> GetMailGroup(MailGroupDataRequest req)
         {
             var emailGroup = this.EmailGroupRepository.GetAll();
-            IQueryable<string> query = null;
-            if(req.GroupName!=null)
+            IQueryable<object> query = null;
+            if (req.GroupName != null)
             {
                 query = from model in emailGroup
                         where model.GroupId == req.GroupId
                         && model.GroupName == req.GroupName
-                        select model.GroupName;
+                        select new
+                        { model.GroupId, model.GroupName };
             }
             else
             {
                 query = from model in emailGroup
-                        select model.GroupName;
+                        select new { model.GroupId, model.GroupName };
             }
+            return query;
+        }
+        public IQueryable<string> GetMailsFromGroup(MailGroupDataRequest req)
+        {
+            var emailGroupRP = this.EmailGroupRepository.GetAll();
+            var emailAddressRP = this.EmailAddressRepository.GetAll();
+            IQueryable<string> query = null;
+            query = from emailGroup in emailGroupRP
+                    join email in emailAddressRP
+                    on emailGroup.GroupId equals email.GroupId
+                    where emailGroup.GroupId == req.GroupId
+                    && emailGroup.GroupName == req.GroupName
+                    select email.Email;
             return query;
         }
         public bool UpdateMailGroup(DataContact.MailGroup.MailGroupUpdateDataRequest req)
@@ -80,7 +95,7 @@ namespace ContmanTask.BussinessLogic.Contact
                 EmailGroupRepository.Update(group);
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

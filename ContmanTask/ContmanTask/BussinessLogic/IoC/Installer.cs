@@ -2,11 +2,6 @@
 using Castle.Windsor;
 using ContmanTask.BussinessLogic.Contact;
 using ContmanTask.BussinessLogic.InterfaceContact;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace ContmanTask.BussinessLogic.IoC
 {
     public static class Installer

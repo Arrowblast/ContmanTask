@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using MySql.Data.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
 using Z.EntityFramework.Plus;
-
 namespace ContmanTask.Database.Repository.Base
 {
     public class BaseUpdatableRepository<TModel, TContext> : BaseRepository<TModel>, IUpdatableRepository<TModel>
@@ -13,12 +11,10 @@ namespace ContmanTask.Database.Repository.Base
         where TContext : DbContext, new()
     {
         protected TContext dbContext;
-
         public BaseUpdatableRepository(DbSet<TModel> entities, TContext context) : base(entities)
         {
             this.dbContext = context;
         }
-
         public void Remove(TModel entity)
         {
             try
@@ -32,7 +28,6 @@ namespace ContmanTask.Database.Repository.Base
                 dbContext.Entry(entity).State = EntityState.Detached;
             }
         }
-
         public void RemoveRange(IEnumerable<TModel> entities)
         {
             try
@@ -48,12 +43,10 @@ namespace ContmanTask.Database.Repository.Base
                 }
             }
         }
-
         public void RemoveRange(IQueryable<TModel> query)
         {
             query.Delete();
         }
-
         public void Insert(TModel entity)
         {
             try
@@ -66,12 +59,10 @@ namespace ContmanTask.Database.Repository.Base
                 dbContext.Entry(entity).State = EntityState.Detached;
             }
         }
-
         public void InsertRange(IEnumerable<TModel> entities)
         {
             try
             {
-
                 this._entities.AddRange(entities);
                 this.dbContext.SaveChanges();
             }
@@ -83,7 +74,6 @@ namespace ContmanTask.Database.Repository.Base
                 }
             }
         }
-
         public void Update(TModel entity)
         {
             try
@@ -97,7 +87,6 @@ namespace ContmanTask.Database.Repository.Base
                 dbContext.Entry(entity).State = EntityState.Detached;
             }
         }
-
         public void UpdateRange(IEnumerable<TModel> entities)
         {
             try
@@ -115,11 +104,8 @@ namespace ContmanTask.Database.Repository.Base
                 {
                     dbContext.Entry(entity).State = EntityState.Detached;
                 }
-                
             }
         }
-
-
         /// <summary>
         /// NOT TESTED!!!
         /// </summary>

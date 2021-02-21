@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MySql.Data.EntityFrameworkCore;
 using System.Linq;
-
 namespace ContmanTask.Database.Repository.Base
 {
     //Base repo is readonly
@@ -12,12 +10,10 @@ namespace ContmanTask.Database.Repository.Base
         {
             this._entities = entities;
         }
-
         public IQueryable<TModel> GetAll()
         {
             return this._entities.AsNoTracking();
         }
-
         protected readonly DbSet<TModel> _entities;
     }
 }

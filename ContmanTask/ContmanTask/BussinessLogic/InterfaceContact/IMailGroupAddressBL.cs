@@ -1,14 +1,11 @@
 ﻿using ContmanTask.BussinessLogic.DataContact.MailGroup;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-
 namespace ContmanTask.BussinessLogic.InterfaceContact
 {
     public interface IMailGroupAddressBL
     {
-        public IQueryable<string> GetMailGroup(MailGroupDataRequest req);
+        public IQueryable<object> GetMailGroup(MailGroupDataRequest req);
+        public IQueryable<string> GetMailsFromGroup(MailGroupDataRequest req);
         public bool AddMailGroup(MailGroupDataRequest req);
         public bool UpdateMailGroup(MailGroupUpdateDataRequest req);
         public bool DeleteMailGroup(MailGroupDataRequest req);

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace ContmanTask.Database.Models
 {
     [Table("email_address", Schema = "contman_task_database")]
@@ -16,9 +12,9 @@ namespace ContmanTask.Database.Models
         }
         [Key]
         [Column("group_id")]
-        public int GroupId { get; set;}
+        public int GroupId { get; set; }
         [Column("group_name")]
-        public string GroupName { get; set;}
+        public string GroupName { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EmailAddressModel> Emails { get; set; }
     }

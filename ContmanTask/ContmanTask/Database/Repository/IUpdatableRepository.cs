@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-
 namespace ContmanTask.Database.Repository.Base
 {
     public interface IUpdatableRepository<TModel> : IRepository<TModel>
