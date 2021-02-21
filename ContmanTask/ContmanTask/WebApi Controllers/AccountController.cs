@@ -44,7 +44,7 @@ namespace ContmanTask.WebApi_Controllers
             var result = AccountBL.CreateAccount(req);
             return Ok(result);
         }
-        private string GetToken()
+        public string GetToken()
         {
             var client = new RestClient("https://dev-d39hr1fk.eu.auth0.com/oauth/token");
             var request = new RestRequest(Method.POST);
