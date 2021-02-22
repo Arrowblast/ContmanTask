@@ -19,7 +19,7 @@
     },
     "ContmanTask": {
       "commandName": "Project",
-      "launchUrl": "weatherforecast",
+      "launchUrl": "https://localhost:1410",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

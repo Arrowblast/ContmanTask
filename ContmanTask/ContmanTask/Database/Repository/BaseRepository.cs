@@ -2,7 +2,6 @@
 using System.Linq;
 namespace ContmanTask.Database.Repository.Base
 {
-    //Base repo is readonly
     public class BaseRepository<TModel> : IRepository<TModel>
         where TModel : class, new()
     {

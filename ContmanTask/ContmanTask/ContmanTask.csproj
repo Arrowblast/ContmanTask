@@ -5,7 +5,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -15,6 +15,7 @@
   <ItemGroup>
     <Folder Include="Database\Utils\" />
     <Folder Include="Database\Repository\" />
+    <Folder Include="Documentation\" />
     <Folder Include="WebApi Controllers\Base\" />
   </ItemGroup>
   <ItemGroup>

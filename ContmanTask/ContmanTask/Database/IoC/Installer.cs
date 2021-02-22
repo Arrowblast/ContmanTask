@@ -10,7 +10,6 @@ namespace ContmanTask.Database.IoC
         public static void Install(IWindsorContainer container)
         {
             DbConfiguration.SetConfiguration(CustomDbConfigurationProvider.CustomDbConfigurationInstance);
-            //TODO: poprawić kiedy będzie już wiadomo jaką aplikacje tworzymy
             container.Register(Component.For<IMySqlRepositoryContext>().ImplementedBy<MySqlRepositoryContent>().LifestylePerThread());
         }
     }

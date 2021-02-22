@@ -25,9 +25,6 @@
             modelBuilder.Entity<EmailGroupModel>().ToTable("email_group");
             modelBuilder.Entity<EmailAddressModel>().ToTable("email_address");
             modelBuilder.Entity<AccountModel>().ToTable("account");
-            /*modelBuilder.Entity<EmailAddressModel>().Map(m => m.ToTable("email_address"));
-            modelBuilder.Entity<AccountModel>().Map(m => m.ToTable("account"));
-            modelBuilder.Entity<EmailGroupModel>().Map(m => m.ToTable("email_group"));*/
         }
     }
 }

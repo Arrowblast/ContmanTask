@@ -9201,11 +9201,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTaskTests\\ContmanTaskTests.csproj",
+      "projectUniqueName": "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTaskTests\\ContmanTaskTests.csproj",
       "projectName": "ContmanTaskTests",
-      "projectPath": "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTaskTests\\ContmanTaskTests.csproj",
+      "projectPath": "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTaskTests\\ContmanTaskTests.csproj",
       "packagesPath": "C:\\Users\\rwalicki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTaskTests\\obj\\",
+      "outputPath": "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTaskTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -9225,8 +9225,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj": {
-              "projectPath": "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj"
+            "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj": {
+              "projectPath": "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTask\\ContmanTask.csproj"
             }
           }
         }

@@ -12,7 +12,7 @@
       "NETCOREAPP3_1"
     ],
     "languageVersion": "8.0",
-    "platform": "x86",
+    "platform": "x64",
     "allowUnsafe": false,
     "warningsAsErrors": false,
     "optimize": false,

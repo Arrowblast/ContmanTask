@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p+dTeFzx+asB5nIWMVHs11WV851rz4IZ0HPQiUbL4fXgIjsGIA5/mDffL4hOXjvAHCYyyq3z1LySmGEd4VfERg==",
+  "dgSpecHash": "qQ6ycRKo476EENy7eBRbC1TSc3bQ+Mw4vdmt5za8wHefrMAB3hfqh8Q3BIb6F1IK5JnFpULJugXq6UmjrUqPGw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rwalicki\\source\\repos\\ContmanTask\\ContmanTask\\ContmanTaskTests\\ContmanTaskTests.csproj",
+  "projectFilePath": "C:\\Users\\rwalicki\\Source\\Repos\\ContmanTask\\ContmanTask\\ContmanTaskTests\\ContmanTaskTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rwalicki\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\rwalicki\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
